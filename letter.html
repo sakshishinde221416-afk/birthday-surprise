@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Letter for Malvika 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="letter.css"/>
+</head>
+<body>
+
+  <div id="petals-container"></div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Music Player -->
+  <div id="music-player">
+    <button id="music-toggle" onclick="toggleMusic()">
+      <span id="music-icon">🎵</span>
+      <span id="music-text">Play Music</span>
+    </button>
+  </div>
+
+  <!-- Audio Element -->
+ <audio id="bg-music" loop>
+    <source src="for malvika.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- Surprise popup -->
+  <div id="surprise-overlay" class="hidden">
+    <div id="surprise-box">
+      <div class="surprise-emoji" id="s-emoji">💌</div>
+      <p id="surprise-text"></p>
+      <button onclick="closeSurprise()">Close 💖</button>
+    </div>
+  </div>
+
+  <!-- Back button -->
+  <a href="index.html" class="back-btn">← Back to Birthday Page</a>
+
+  <!-- ===== LETTER HERO ===== -->
+  <section id="letter-hero">
+    <div class="lh-inner">
+      <div class="lh-roses">🌹🌸🌹🌸🌹</div>
+      <p class="lh-sub">A letter written from the heart</p>
+      <h1 class="lh-title">Dear <span class="lh-name">Malvika</span>,</h1>
+      <p class="lh-tagline">Happy Birthday to the person who made my first year feel like home. 💖</p>
+      <div class="lh-roses">🌸🌹🌸🌹🌸</div>
+    </div>
+  </section>
+
+  <!-- ===== LETTER BODY ===== -->
+  <section id="letter-body">
+    <div class="paper">
+
+      <div class="paper-deco top-deco">🌹 🌸 🌹 🌸 🌹</div>
+
+      <div class="letter-para">
+        <p>Sometimes I sit and think about how randomly we met in the first semester, and how naturally you became such an important part of my life. We didn't force a friendship, we just clicked. Our vibes matched so quickly, and before I even realized it, you had become my best friend.</p>
+      </div>
+
+      <!-- Surprise 1 -->
+      <div class="inline-surprise" onclick="showSurprise(0)">
+        <span>🎀 Tap for a little surprise</span>
+      </div>
+
+      <div class="letter-para highlight-para">
+        <p>There is something so beautiful about the days when your boyfriend wasn't in the picture yet and you used to spend so much time with me. Those days are still some of my favorite memories ever. We didn't need big plans or special occasions — even ordinary days felt special because they were spent with you.</p>
+      </div>
+
+      <div class="letter-para">
+        <p>The gossip sessions, the food cravings, laughing in lectures when we were supposed to be serious, doing masti in practicals, sitting on the first bench with Shifa and still creating chaos… these are not just funny moments to me, they are pieces of my heart.</p>
+      </div>
+
+      <div class="memory-box">
+        <div class="memory-icon">😭</div>
+        <p>And honestly, who else could have been part of a friendship crazy enough to lock Shifa in the toilet and casually go back to lectures as if nothing happened?</p>
+        <p class="memory-tag">That will forever be one of my favorite memories.</p>
+      </div>
+
+      <!-- Surprise 2 -->
+      <div class="inline-surprise" onclick="showSurprise(1)">
+        <span>🌹 Another little surprise!</span>
+      </div>
+
+      <div class="letter-para">
+        <p>People talk about friendships, but very few people get lucky enough to find a friend who is caring, helping, comforting and genuine all at once.</p>
+        <p class="italic-line">I did. I found that in you.</p>
+        <p>Your helping nature, the way you care, the way you show up in little ways… maybe you don't even realize how much those things mean.</p>
+      </div>
+
+      <div class="letter-para soft-para">
+        <p>And yes, I miss the time when I had more of you.</p>
+        <p>I know life changes, priorities change, and akul is an important part of your life — I understand that.</p>
+        <p>But somewhere in my heart, I still miss those days when I was the one you spent so much time with. Maybe I'll always miss them a little. But even that comes from love. Because you matter to me that much.</p>
+      </div>
+
+      <div class="paper-deco mid-deco">✨ 💖 ✨</div>
+
+      <!-- Surprise 3 -->
+      <div class="inline-surprise" onclick="showSurprise(2)">
+        <span>✨ One more surprise for you!</span>
+      </div>
+
+      <div class="letter-para">
+        <p>You are not just my best friend. You are one of the most beautiful parts of my college life.</p>
+        <p>When I look back years from now, I know I won't remember every lecture or every practical…</p>
+      </div>
+
+      <div class="memory-list">
+        <div class="ml-item">🌸 Our laughter</div>
+        <div class="ml-item">🌹 Our chaos</div>
+        <div class="ml-item">🌸 Our first bench stories</div>
+        <div class="ml-item">🌹 Our food</div>
+        <div class="ml-item">🌸 Our gossip</div>
+        <div class="ml-item">🌹 Our friendship</div>
+      </div>
+
+      <div class="letter-para">
+        <p>And I hope no matter where life takes us, we never lose this.</p>
+      </div>
+
+      <!-- Wishes box -->
+      <div class="wishes-box">
+        <h3>On your birthday, I wish you… 🎂</h3>
+        <div class="wish-item">🌟 The best career opportunities</div>
+        <div class="wish-item">💫 Success you truly deserve</div>
+        <div class="wish-item">🌸 Happiness that stays</div>
+        <div class="wish-item">💖 A life so beautiful it matches your heart</div>
+      </div>
+
+      <div class="letter-para closing-para">
+        <p>Thank you for making college unforgettable.</p>
+        <p>Thank you for being my safe place.</p>
+        <p>Thank you for being my best friend.</p>
+      </div>
+
+      <div class="final-line">
+        <p>"Some people become a memory.</p>
+        <p>Some become a chapter.</p>
+        <p class="final-highlight">You became a part of my story."</p>
+      </div>
+
+      <div class="sign-off">
+        <p>Happy Birthday Malvika.</p>
+        <p class="love-line">I love you more than I say. 💖</p>
+      </div>
+
+      <div class="paper-deco bottom-deco">🌹 🌸 🌹 🌸 🌹</div>
+
+    </div>
+  </section>
+
+  <!-- ===== FINAL SURPRISE BUTTON ===== -->
+  <section id="final-surprise-section">
+    <button class="big-surprise-btn" onclick="showSurprise(3)">
+      🎁 One Last Birthday Surprise!
+    </button>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="letter-footer">
+    <p>Written with love 💖</p>
+    <p class="footer-roses">🌹🌸🌹🌸🌹🌸🌹</p>
+  </footer>
+
+  <script src="letter.js"></script>
+</body>
+</html>

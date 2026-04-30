@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Malvika 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Floating petals container -->
+  <div id="petals-container"></div>
+
+  <!-- Surprise Popup -->
+  <div id="surprise-overlay" class="hidden">
+    <div id="surprise-box">
+      <div class="surprise-emoji">🎁</div>
+      <p id="surprise-text"></p>
+      <button onclick="closeSurprise()">Close 💖</button>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Music Player -->
+  <div id="music-player">
+    <button id="music-toggle" onclick="toggleMusic()">
+      <span id="music-icon">🎵</span>
+      <span id="music-text">Play Music</span>
+    </button>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="for malvika.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="rose-top">🌹🌸🌹</div>
+      <p class="subtitle">A very special day for a very special girl</p>
+      <h1 class="main-title">Happy Birthday<br/><span class="name-glow">Malvika</span></h1>
+      <p class="tagline">💖 To my partner in gossip, food adventures, lecture masti, and countless memories 💖</p>
+      <div class="hero-btn-row">
+        <button class="btn-glow" onclick="startJourney()">Open Your Surprise 🎀</button>
+      </div>
+      <div class="rose-bottom">🌸🌹🌸</div>
+    </div>
+    <div class="scroll-hint">↓ Scroll down for your birthday story ↓</div>
+  </section>
+
+  <!-- ===== MESSAGES SECTION ===== -->
+  <section id="messages">
+
+    <!-- Message 1 -->
+    <div class="msg-card" data-aos="fade-up">
+      <div class="card-rose">🌹</div>
+      <span class="card-num">01</span>
+      <h2>Where It All Began</h2>
+      <p>We met in the very first semester, and somehow it felt effortless from the beginning. Our vibes matched so quickly, as if we had known each other much longer than we actually had.</p>
+      <p>Some friendships take time to grow, but ours felt natural from day one.</p>
+      <div class="card-sparkle">✨</div>
+    </div>
+
+    <!-- Message 2 -->
+    <div class="msg-card reverse" data-aos="fade-up">
+      <div class="card-rose">🌸</div>
+      <span class="card-num">02</span>
+      <h2>Every Day With You</h2>
+      <p>Thank you for being the friend with whom every random conversation turns into gossip, every break turns into a food date, and every boring lecture turns into a memory.</p>
+      <p>From laughing on the first bench to surviving practicals with chaos, you've made college so much brighter.</p>
+      <div class="card-sparkle">💫</div>
+    </div>
+
+    <!-- Surprise Button 1 -->
+    <div class="surprise-trigger-row">
+      <button class="surprise-btn" onclick="showSurprise(0)">🎀 Tap for a little surprise!</button>
+    </div>
+
+    <!-- Message 4 -->
+    <div class="msg-card" data-aos="fade-up">
+      <div class="card-rose">🌹</div>
+      <span class="card-num">03</span>
+      <h2>Our Little Trio 💕</h2>
+      <p>And then there's us — you, me and Shifa. Our little trio of madness.</p>
+      <p>Too much laughter. Too much drama. Too much masti.</p>
+      <p>First bench never felt like the 'serious students' zone because we somehow made it our comedy stage.</p>
+      <div class="card-sparkle">🎭</div>
+    </div>
+
+    <!-- Message 5 -->
+    <div class="msg-card reverse" data-aos="fade-up">
+      <div class="card-rose">🌸</div>
+      <span class="card-num">04</span>
+      <h2>Always In My Heart</h2>
+      <p>Life will get busy. People will have priorities. Things will change.</p>
+      <p>But I hope you always know you hold a very special place in my heart. Even when you get busy and give less time sometimes, our friendship still means so much to me.</p>
+      <p>Because real friendship is not measured in daily hours — it is felt in comfort, trust, and the joy of being understood.</p>
+      <div class="card-sparkle">💖</div>
+    </div>
+
+    <!-- Surprise Button 2 -->
+    <div class="surprise-trigger-row">
+      <button class="surprise-btn" onclick="showSurprise(1)">🌹 Another surprise awaits!</button>
+    </div>
+
+    <!-- Message 6 -->
+    <div class="msg-card" data-aos="fade-up">
+      <div class="card-rose">🌹</div>
+      <span class="card-num">05</span>
+      <h2>Who Else But You?</h2>
+      <p>Who else will share endless gossip with me, eat with me all the time, laugh in lectures, do masti in practicals, and make even ordinary college days unforgettable?</p>
+      <p>Honestly… college without you would have been so boring. 😄</p>
+      <div class="card-sparkle">🍕</div>
+    </div>
+
+    <!-- Message 7 -->
+    <div class="msg-card reverse" data-aos="fade-up">
+      <div class="card-rose">🌸</div>
+      <span class="card-num">06</span>
+      <h2>Happy Birthday, My Girl 🎂</h2>
+      <p>Happy Birthday Malvika — thank you for being my safe space, my chaos partner, my food buddy, and one of the most beautiful friendships I found in college.</p>
+      <p>May we always stay the girls laughing too much on the first bench.</p>
+      <p class="love-sign">Love you always. 💖</p>
+      <div class="card-sparkle">🎂</div>
+    </div>
+
+  </section>
+
+  <!-- ===== FINAL QUOTE ===== -->
+  <section id="final-quote">
+    <div class="quote-box">
+      <div class="quote-roses">🌹🌸🌹🌸🌹</div>
+      <p class="big-quote">"Some people become friends.<br/>Some become comfort.<br/><span class="highlight-quote">You became both.</span>"</p>
+      <div class="quote-roses">🌸🌹🌸🌹🌸</div>
+    </div>
+  </section>
+
+  <!-- ===== CAKE SECTION ===== -->
+  <section id="cake-section">
+    <h2 class="cake-title">Make a Wish! 🎂</h2>
+    <div class="cake-wrapper">
+      <div class="cake" id="cake" onclick="blowCandles()">
+        <div class="candles-row">
+          <div class="candle"><div class="flame" id="f1"></div></div>
+          <div class="candle"><div class="flame" id="f2"></div></div>
+          <div class="candle"><div class="flame" id="f3"></div></div>
+          <div class="candle"><div class="flame" id="f4"></div></div>
+          <div class="candle"><div class="flame" id="f5"></div></div>
+        </div>
+        <div class="cake-top"></div>
+        <div class="cake-mid"></div>
+        <div class="cake-bot"></div>
+      </div>
+      <p class="cake-hint">👆 Tap the cake to blow the candles!</p>
+      <p id="wish-msg" class="wish-msg hidden">🎉 Your wish has been sent to the universe! 🌟</p>
+    </div>
+  </section>
+
+  <!-- ===== PHOTO GALLERY ===== -->
+  <section id="gallery">
+    <h2 class="section-title">Our Memories 📸</h2>
+    <div class="gallery-grid">
+      <div class="photo-frame">
+        <img src="WhatsApp Image 2026-04-29 at 8.09.23 PM.jpeg" alt="Memory 1"/>
+        <p>💖 Us 💖</p>
+      </div>
+      <div class="photo-frame">
+        <img src="WhatsApp Image 2026-04-29 at 8.10.06 PM.jpeg" alt="Memory 2"/>
+        <p>🌸 Always 🌸</p>
+      </div>
+      <div class="photo-frame">
+        <img src="WhatsApp Image 2026-04-29 at 8.11.04 PM.jpeg" alt="Memory 3"/>
+        <p>🌹 Together 🌹</p>
+      </div>
+      <div class="photo-frame">
+        <img src="WhatsApp Image 2026-04-29 at 8.11.04 PM (1).jpeg" alt="Memory 4"/>
+        <p>✨ Forever ✨</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENVELOPE SECTION ===== -->
+  <section id="envelope-section">
+    <h2 class="section-title">A Letter Just For You 💌</h2>
+    <p class="env-hint">Something special is waiting inside...</p>
+    <div class="envelope-wrapper" onclick="openLetter()">
+      <div class="envelope" id="envelope">
+        <div class="env-flap" id="env-flap"></div>
+        <div class="env-body">
+          <div class="env-heart">💖</div>
+        </div>
+      </div>
+      <p class="env-tap-hint">Tap the envelope to open 💌</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Made with 💖 for the most wonderful Malvika</p>
+    <p class="footer-roses">🌹🌸🌹🌸🌹🌸🌹</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function openLetter() {
+      const env = document.getElementById('envelope');
+      const flap = document.getElementById('env-flap');
+      env.classList.add('opening');
+      flap.classList.add('open');
+      setTimeout(() => {
+        window.location.href = 'letter.html';
+      }, 900);
+    }
+  </script>
+</body>
+</html>
